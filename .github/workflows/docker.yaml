@@ -3,10 +3,10 @@ on:
     push:
         branches: 
             - main
-env:
-    DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-    DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-    DOCKER_REPO: ${{ secrets.DOCKER_REPO }}
+# env:
+#     DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+#     DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+#     DOCKER_REPO: ${{ secrets.DOCKER_REPO }}
 jobs:
     build:
         runs-on: ubuntu-latest
