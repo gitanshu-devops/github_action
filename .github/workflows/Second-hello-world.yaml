@@ -1,0 +1,17 @@
+name: Hello World in multiple way
+on:
+  workflow_dispatch:
+jobs:
+  hello-world-bash:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World on bash
+        run: echo "Hello World from bash !!!"
+  hello-world-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World on Python
+        run: print("Hello World from Python")
+        shell: python
+
+    
