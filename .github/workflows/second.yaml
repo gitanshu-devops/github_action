@@ -1,8 +1,9 @@
-name: "Hello-world"
-on: push 
+name: "Hello-world" # Workflow name
+on: # when to trigger ``
+    workflow_dispatch: # manual trigger 
 jobs:
-    my-job:
-        runs-on: ubuntu-latest
+    say-hello-world: # Job name can be anything you like
+        runs-on: ubuntu-latest # Runner
         steps:
-            - name: my-step
-              run: echo "Hello world"
+            - name: Echo Hello World # step namer
+              run: echo "Hello world" 
