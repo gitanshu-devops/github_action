@@ -1,0 +1,37 @@
+name: Inputs and choices
+
+on:
+  workflow_dispatch:
+    inputs:
+      docker_image:
+        description: "Yes or No for building"
+        type: boolean
+        required: false
+        default: false
+
+      printing_message:
+        description: "Printing messages"
+        type: choice
+        required: false
+        default: option-1
+        options:
+          - option-1
+          - option-2
+          - option-3
+
+jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.docker_image }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build . -t my-docker-image
+
+  print-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print selected message
+        run: echo "${{ inputs.printing_message }}"
