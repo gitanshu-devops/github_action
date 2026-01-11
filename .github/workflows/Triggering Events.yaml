@@ -1,23 +1,23 @@
-name: Triggering Events 
-on:
-  push:
-    branches:
-      - "github-action-test/*"
-      - "main"
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
-    paths:
-      - "Dockerfile"
-      - "!README.md"
-  # schedule:
-  #   - cron: "0 0 * * *"
-jobs:
-  echo-event:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dump full event 
-        run: | 
-          echo "=== $GITHUB_EVENT_NAME ===" 
+# name: Triggering Events 
+# on:
+#   push:
+#     branches:
+#       - "github-action-test/*"
+#       - "main"
+#   pull_request:
+#     types:
+#       - opened
+#       - synchronize
+#       - reopened
+#     paths:
+#       - "Dockerfile"
+#       - "!README.md"
+#   # schedule:
+#   #   - cron: "0 0 * * *"
+# jobs:
+#   echo-event:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Dump full event 
+#         run: | 
+#           echo "=== $GITHUB_EVENT_NAME ===" 

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       docker_image:
-        description: "Yes or No for building"
+        description: "Build docker image"
         type: boolean
         required: false
         default: false
